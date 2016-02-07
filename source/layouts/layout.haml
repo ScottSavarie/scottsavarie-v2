@@ -1,0 +1,35 @@
+!!!
+/ [if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/ [if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/ [if IE 8] <html class="no-js lt-ie9"> 
+/ [if gt IE 8]
+%html.no-js{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    / Use title if it's in the page YAML frontmatter
+    %title= data.page.title
+    %meta{:name => "description", :content => data.page.description}
+    %meta{:content => "width=device-width", :name => "viewport"}
+    %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
+    %meta{:content => "yes", :name => "apple-touch-fullscreen"}
+    / Place favicon.ico and apple-touch-icon.png in the root directory
+    %link{:href => "css/style.css", :rel => "stylesheet"}
+    %script{:src => "https://use.typekit.net/esc7hih.js"}
+    %script{:src => "https://use.typekit.net/esc7hih.js"}
+    :javascript
+      try{Typekit.load({ async: true });}catch(e){}
+
+
+  %body(class="#{@body_class.presence}")
+    = partial "navigation"
+    = yield
+    = partial "footer"
+    %script{:src => "js/main.js"}
+
+
+    :javascript
+      var _gaq=[['_setAccount','UA-17675383-2'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));

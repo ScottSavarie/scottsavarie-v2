@@ -1,0 +1,117 @@
+@import "normalize.sass"
+@import "compass"
+
+@import "partials/constants.sass"
+@import "partials/mixins.sass"
+@import "partials/typography.sass"
+@import "partials/navigation.sass"
+@import "partials/layout.sass"
+@import "partials/ui.sass"
+@import "pages/home.sass"
+
+*
+  box-sizing: border-box
+
+html
+  width: 100%
+  height: 100%
+  min-height: 100%
+  font-size: 1em
+
+
+body
+  font-size: 100%
+  height: 100%
+  min-height: 100%
+  margin: 0
+  padding: 0
+  width: 100%
+  overflow-x: hidden
+  color: $c-darkgrey
+  font-family: "source-sans-pro", Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  animation: fadein 1.5s
+  -webkit-animation: fade 1.5s
+
+
+@-webkit-keyframes
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+
+@keyframes fade
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+
+ul, ol
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+a, a:visited
+  text-decoration: none
+  color: $c-darkgrey
+  &:hover, &:focus
+    color: lighten($c-darkgrey, 12%)
+
+
+
+
+
+a.contact-list-link, a.contact-list-link:visited
+  text-transform: uppercase
+  letter-spacing: 2.5px
+  font-size: 0.55em
+  color: $c-darkgrey
+  +single-transition(color, ease-out, 0.3s)
+  &:hover, &:focus
+    color: lighten($c-darkgrey, 50%)
+
+
+
+
+
+a.job-link, a.job-link:visited
+  color: $c-darkgrey
+  display: block
+  position: relative
+  overflow: visible
+  line-height: 1.65
+  &:after
+    content: ""
+    position: absolute
+    top: 6px
+    left: -15px
+    height: 76%
+    width: 3px
+    background: $c-red
+    +opacity(0)
+    +single-transition(opacity,ease-out, 0.3s)
+  &:hover, &:focus
+    &:after
+      +opacity(1)
+    
+
+
+img
+  max-width: 100%
+  height: auto 
+  width: auto 
+
+
+
+
+
+
+
+
+
+
+
+
+  
